@@ -249,6 +249,26 @@ type ReconcileClusterDeployment struct {
 // Automatically generate RBAC rules to allow the Controller to read and write Deployments
 //
 func (r *ReconcileClusterDeployment) Reconcile(request reconcile.Request) (result reconcile.Result, returnErr error) {
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	return reconcile.Result{}, nil
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+	// DO NOT PR THIS!!!  FOR DEBUG ONLY!!!
+}
+
+func (r *ReconcileClusterDeployment) oldReconcile(request reconcile.Request) (result reconcile.Result, returnErr error) {
 	start := time.Now()
 	cdLog := r.logger.WithFields(log.Fields{
 		"controller":        controllerName,
