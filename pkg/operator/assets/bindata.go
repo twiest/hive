@@ -2032,6 +2032,27 @@ spec:
                   - cloud
                   - credentialsSecretRef
                   type: object
+                ovirt:
+                  description: Ovirt is the configuration used when installing on
+                    oVirt
+                  properties:
+                    credentialsSecretRef:
+                      description: 'CredentialsSecretRef refers to a secret that contains
+                        the oVirt account access credentials with fields: ovirt_url,
+                        ovirt_username, ovirt_password, ovirt_ca_bundle'
+                      properties:
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                            TODO: Add other useful fields. apiVersion, kind, uid?'
+                          type: string
+                      type: object
+                    ovirt_cluster_id:
+                      description: The target cluster under which all VMs will run
+                      type: string
+                  required:
+                  - credentialsSecretRef
+                  - ovirt_cluster_id
+                  type: object
                 vsphere:
                   description: VSphere is the configuration used when installing on
                     vSphere
@@ -2709,6 +2730,25 @@ spec:
                       type: object
                   required:
                   - cloud
+                  type: object
+                ovirt:
+                  description: Ovirt contains oVirt-specific deprovision settings
+                  properties:
+                    credentialsSecretRef:
+                      description: CredentialsSecretRef is the oVirt account credentials
+                        to use for deprovisioning the cluster
+                      properties:
+                        name:
+                          description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                            TODO: Add other useful fields. apiVersion, kind, uid?'
+                          type: string
+                      type: object
+                    ovirt_cluster_id:
+                      description: The oVirt cluster ID
+                      type: string
+                  required:
+                  - credentialsSecretRef
+                  - ovirt_cluster_id
                   type: object
                 vsphere:
                   description: VSphere contains VMWare vSphere-specific deprovision
@@ -9536,6 +9576,10 @@ spec:
                       type: object
                   required:
                   - flavor
+                  type: object
+                ovirt:
+                  description: OVirt is the configuration used when installing on
+                    oVirt.
                   type: object
                 vsphere:
                   description: VSphere is the configuration used when installing on
