@@ -1833,7 +1833,7 @@ func (in *MachinePoolPlatform) DeepCopyInto(out *MachinePoolPlatform) {
 	if in.OVirt != nil {
 		in, out := &in.OVirt, &out.OVirt
 		*out = new(ovirt.MachinePool)
-		**out = **in
+		(*in).DeepCopyInto(*out)
 	}
 	return
 }
